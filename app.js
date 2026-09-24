@@ -62,3 +62,20 @@ function initUser(){
   document.getElementById("tg-username").textContent=u.username ? "@"+u.username : "Telegram account";
 }
 initUser();
+async function loadVpnServers() {
+  try {
+    const response = await fetch(`${API_BASE}/api/vpn/servers`);
+    const data = await response.json();
+
+    if (!data.ok) {
+      console.error("VPN servers error:", data);
+      return;
+    }
+
+    console.log("VPN servers from Neon:", data.servers);
+  } catch (error) {
+    console.error("VPN servers connection error:", error);
+  }
+}
+
+loadVpnServers();
