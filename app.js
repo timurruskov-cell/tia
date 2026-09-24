@@ -65,14 +65,43 @@ initUser();
 async function loadVpnServers() {
   try {
     const response = await fetch(`${API_BASE}/api/vpn/servers`);
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+
     const data = await response.json();
 
-    if (!data.ok) {
-      console.error("VPN servers error:", data);
-      return;
+    if (!data.ok || !Array.isArray(data.servers)) {
+      throw new Error("Неверный ответ сервера");
     }
 
     console.log("VPN servers from Neon:", data.servers);
+
+    const cards = document.querySelectorAll(".server-card");
+
+    data.servers.forEach((server, index) => {
+      const card = cards[index];
+
+      if (!card) return;
+
+      const name = card.querySelector(".server-main b");
+      const description = card.querySelector(".server-main small");
+      const tag = card.querySelector(".tag");
+
+      if (name) {
+        name.textContent = server.country_name;
+      }
+
+      if (description) {
+        description.textContent = server.description || "VPN-сервер";
+      }
+
+      if (tag) {
+        tag.textContent = server.purpose_tag || "VPN";
+      }
+    });
+
   } catch (error) {
     console.error("VPN servers connection error:", error);
   }
