@@ -1,6 +1,18 @@
 const tg = window.Telegram?.WebApp;
 if (tg) { tg.ready(); tg.expand(); }
+const API_BASE = "https://tia-backend-gx6p.onrender.com";
 
+async function checkBackend() {
+  try {
+    const response = await fetch(`${API_BASE}/health`);
+    const data = await response.json();
+    console.log("TIa Backend:", data);
+  } catch (error) {
+    console.error("TIa Backend error:", error);
+  }
+}
+
+checkBackend();
 const pageIds = ["home","servers","services","payments","esim","profile"];
 
 function openSection(id){
