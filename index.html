@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#171316" />
+  <title>TIa Connect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://telegram.org/js/telegram-web-app.js?63"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">T<span>✦</span></div>
+        <div>
+          <div class="brand-name">TIa Connect</div>
+          <div class="brand-sub">secure access · global services</div>
+        </div>
+      </div>
+      <button class="icon-btn" onclick="openSection('profile')" aria-label="Профиль">◌</button>
+    </header>
+
+    <main>
+      <section id="home" class="page active">
+        <div class="hero">
+          <div class="hero-orb"></div>
+          <div class="eyebrow">TIa CONNECT</div>
+          <h1>Больше возможностей.<br><em>Без лишних границ.</em></h1>
+          <p>Безопасное подключение, международные сервисы и связь в поездках — в одном Mini App.</p>
+          <button class="primary" onclick="openSection('servers')">Выбрать сервер <span>→</span></button>
+        </div>
+
+        <div class="status-card">
+          <div class="status-head">
+            <span class="dot"></span>
+            <span>VPN не подключён</span>
+            <span class="muted">Готов к подключению</span>
+          </div>
+          <div class="connect-row">
+            <div>
+              <div class="small-label">Рекомендуемый сервер</div>
+              <strong>🇳🇱 Нидерланды</strong>
+              <div class="server-note">Высокая скорость</div>
+            </div>
+            <button class="power" onclick="connectServer('nl')">↗</button>
+          </div>
+        </div>
+
+        <div class="section-title"><span>Сервисы</span><a onclick="openSection('services')">Все →</a></div>
+        <div class="service-grid">
+          <button onclick="openSection('servers')" class="service-card"><span>◈</span><b>VPN</b><small>Безопасное соединение</small></button>
+          <button onclick="openSection('payments')" class="service-card"><span>▣</span><b>Оплата</b><small>Зарубежных сервисов</small></button>
+          <button onclick="openSection('esim')" class="service-card"><span>▤</span><b>Travel SIM</b><small>Интернет в поездках</small></button>
+          <button onclick="openTelegram()" class="service-card"><span>➤</span><b>Новости</b><small>В нашем Telegram</small></button>
+        </div>
+
+        <div class="section-title"><span>Почему TIa</span></div>
+        <div class="benefits">
+          <div><b>01</b><strong>Конфиденциальность</strong><small>Безопасное подключение и защита трафика.</small></div>
+          <div><b>02</b><strong>Стабильность</strong><small>Выбор локации под конкретную задачу.</small></div>
+          <div><b>03</b><strong>Всё в одном месте</strong><small>VPN, международные сервисы и SIM-карты.</small></div>
+        </div>
+      </section>
+
+      <section id="servers" class="page">
+        <div class="page-heading"><span class="eyebrow">VPN</span><h2>Серверы</h2><p>Выбирайте локацию по задаче.</p></div>
+        <div class="filters"><button class="filter active">Все</button><button class="filter">Скорость</button><button class="filter">Privacy</button><button class="filter">Стабильность</button></div>
+        <div class="server-list">
+          <button class="server-card" onclick="connectServer('nl')"><span class="flag">🇳🇱</span><span class="server-main"><b>Нидерланды</b><small>Высокая скорость соединения</small></span><span class="tag speed">SPEED</span><span class="signal">▂▅▇</span></button>
+          <button class="server-card" onclick="connectServer('fi')"><span class="flag">🇫🇮</span><span class="server-main"><b>Финляндия</b><small>Повышенная конфиденциальность</small></span><span class="tag privacy">PRIVACY</span><span class="signal">▂▅▇</span></button>
+          <button class="server-card" onclick="connectServer('de')"><span class="flag">🇩🇪</span><span class="server-main"><b>Германия</b><small>Стабильное соединение</small></span><span class="tag stable">STABLE</span><span class="signal">▂▅▇</span></button>
+          <button class="server-card" onclick="connectServer('sg')"><span class="flag">🇸🇬</span><span class="server-main"><b>Сингапур</b><small>Оптимально для Азии</small></span><span class="tag global">GLOBAL</span><span class="signal">▂▅▇</span></button>
+          <button class="server-card" onclick="connectServer('us')"><span class="flag">🇺🇸</span><span class="server-main"><b>США</b><small>Доступ к зарубежным сервисам</small></span><span class="tag services">SERVICES</span><span class="signal">▂▅▇</span></button>
+        </div>
+        <div class="info-note">Нажатие «Подключиться» откроет выбранный VPN-клиент. Ссылки Happ/INCY подключаются на этапе настройки сервера.</div>
+      </section>
+
+      <section id="services" class="page">
+        <div class="page-heading"><span class="eyebrow">SERVICES</span><h2>Сервисы</h2><p>Всё необходимое — в одном месте.</p></div>
+        <div class="large-service" onclick="openSection('payments')"><span class="large-icon">▣</span><div><b>Оплата зарубежных сервисов</b><small>Подписки, приложения и международные сервисы</small></div><span>→</span></div>
+        <div class="large-service" onclick="openSection('esim')"><span class="large-icon">▤</span><div><b>Туристические SIM-карты</b><small>Связь и интернет в поездках</small></div><span>→</span></div>
+        <div class="large-service" onclick="openTelegram()"><span class="large-icon">➤</span><div><b>Новости проекта</b><small>Новые серверы, обновления и предложения</small></div><span>→</span></div>
+      </section>
+
+      <section id="payments" class="page">
+        <div class="page-heading"><span class="eyebrow">PAYMENTS</span><h2>Зарубежные сервисы</h2><p>Выберите нужную категорию.</p></div>
+        <div class="payment-grid">
+          <button class="payment-card"><span>◉</span><b>Подписки</b><small>Международные подписки</small></button>
+          <button class="payment-card"><span>✦</span><b>Приложения</b><small>Покупки в зарубежных магазинах</small></button>
+          <button class="payment-card"><span>◎</span><b>Digital-сервисы</b><small>Оплата доступных сервисов</small></button>
+          <button class="payment-card"><span>＋</span><b>Другая услуга</b><small>Уточнить доступность</small></button>
+        </div>
+        <div class="info-note">Конкретные способы оплаты, комиссии и доступность добавим после подключения платёжного провайдера.</div>
+      </section>
+
+      <section id="esim" class="page">
+        <div class="page-heading"><span class="eyebrow">TRAVEL</span><h2>Travel SIM</h2><p>Связь в поездках без лишних хлопот.</p></div>
+        <div class="esim-hero"><div class="sim-shape">TIa</div><div><b>Интернет в любой стране</b><small>Выберите направление и подходящий пакет.</small></div></div>
+        <div class="country-grid">
+          <button class="country-card"><span>🇹🇷</span><b>Турция</b><small>eSIM</small></button>
+          <button class="country-card"><span>🇦🇪</span><b>ОАЭ</b><small>eSIM</small></button>
+          <button class="country-card"><span>🇹🇭</span><b>Таиланд</b><small>eSIM</small></button>
+          <button class="country-card"><span>🌍</span><b>Другие страны</b><small>Скоро</small></button>
+        </div>
+      </section>
+
+      <section id="profile" class="page">
+        <div class="page-heading"><span class="eyebrow">ACCOUNT</span><h2>Профиль</h2><p>Ваши настройки и данные.</p></div>
+        <div class="profile-card"><div class="avatar">T</div><div><b id="tg-name">Telegram user</b><small id="tg-username">@username</small></div></div>
+        <div class="setting"><span>Уведомления</span><span class="toggle on"></span></div>
+        <div class="setting"><span>Язык</span><span>Русский ›</span></div>
+        <div class="setting"><span>Поддержка</span><span onclick="openTelegram()">Telegram ›</span></div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav active" data-page="home" onclick="openSection('home')"><span>⌂</span><small>Главная</small></button>
+      <button class="nav" data-page="servers" onclick="openSection('servers')"><span>◈</span><small>VPN</small></button>
+      <button class="nav center" data-page="services" onclick="openSection('services')"><span>TIa</span></button>
+      <button class="nav" data-page="esim" onclick="openSection('esim')"><span>▤</span><small>Travel</small></button>
+      <button class="nav" data-page="profile" onclick="openSection('profile')"><span>○</span><small>Профиль</small></button>
+    </nav>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
