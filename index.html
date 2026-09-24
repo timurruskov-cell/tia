@@ -1,10 +1,10 @@
+
 <!doctype html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#171316" />
-
   <title>TIa Connect</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,16 +28,23 @@
     <header class="topbar">
 
       <div class="brand">
+
         <div class="brand-mark">
           T<span>✦</span>
         </div>
 
         <div>
-          <div class="brand-name">TIa Connect</div>
+
+          <div class="brand-name">
+            TIa Connect
+          </div>
+
           <div class="brand-sub">
             secure access · global services
           </div>
+
         </div>
+
       </div>
 
       <button
@@ -53,9 +60,7 @@
 
     <main>
 
-      <!-- ========================= -->
       <!-- HOME -->
-      <!-- ========================= -->
 
       <section id="home" class="page active">
 
@@ -115,23 +120,18 @@
                 Рекомендуемый сервер
               </div>
 
-              <strong id="recommended-server">
+              <strong>
                 🇳🇱 Нидерланды
               </strong>
 
-              <div
-                class="server-note"
-                id="recommended-server-note"
-              >
+              <div class="server-note">
                 Высокая скорость
               </div>
 
             </div>
 
-
             <button
               class="power"
-              id="recommended-connect"
               onclick="connectServer('nl')"
             >
               ↗
@@ -212,44 +212,58 @@
         <!-- BENEFITS -->
 
         <div class="section-title">
+
           <span>
             Почему TIa
           </span>
+
         </div>
 
 
         <div class="benefits">
 
           <div>
+
             <b>01</b>
+
             <strong>
               Конфиденциальность
             </strong>
+
             <small>
               Безопасное подключение и защита трафика.
             </small>
+
           </div>
 
 
           <div>
+
             <b>02</b>
+
             <strong>
               Стабильность
             </strong>
+
             <small>
               Выбор локации под конкретную задачу.
             </small>
+
           </div>
 
 
           <div>
+
             <b>03</b>
+
             <strong>
               Всё в одном месте
             </strong>
+
             <small>
               VPN, международные сервисы и SIM-карты.
             </small>
+
           </div>
 
         </div>
@@ -257,9 +271,7 @@
       </section>
 
 
-      <!-- ========================= -->
       <!-- VPN SERVERS -->
-      <!-- ========================= -->
 
       <section id="servers" class="page">
 
@@ -301,37 +313,181 @@
         </div>
 
 
-        <!--
-          Сюда будут загружаться серверы из Neon
-          через Render Backend.
-        -->
+        <div class="server-list">
 
-        <div
-          class="server-list"
-          id="vpn-server-list"
-        >
+          <button
+            class="server-card"
+            onclick="connectServer('nl')"
+          >
 
-          <div class="info-note">
-            Загружаем серверы...
-          </div>
+            <span class="flag">
+              🇳🇱
+            </span>
+
+            <span class="server-main">
+
+              <b>
+                Нидерланды
+              </b>
+
+              <small>
+                Высокая скорость соединения
+              </small>
+
+            </span>
+
+            <span class="tag speed">
+              SPEED
+            </span>
+
+            <span class="signal">
+              ▂▅▇
+            </span>
+
+          </button>
+
+
+          <button
+            class="server-card"
+            onclick="connectServer('fi')"
+          >
+
+            <span class="flag">
+              🇫🇮
+            </span>
+
+            <span class="server-main">
+
+              <b>
+                Финляндия
+              </b>
+
+              <small>
+                Повышенная конфиденциальность
+              </small>
+
+            </span>
+
+            <span class="tag privacy">
+              PRIVACY
+            </span>
+
+            <span class="signal">
+              ▂▅▇
+            </span>
+
+          </button>
+
+
+          <button
+            class="server-card"
+            onclick="connectServer('de')"
+          >
+
+            <span class="flag">
+              🇩🇪
+            </span>
+
+            <span class="server-main">
+
+              <b>
+                Германия
+              </b>
+
+              <small>
+                Стабильное соединение
+              </small>
+
+            </span>
+
+            <span class="tag stable">
+              STABLE
+            </span>
+
+            <span class="signal">
+              ▂▅▇
+            </span>
+
+          </button>
+
+
+          <button
+            class="server-card"
+            onclick="connectServer('sg')"
+          >
+
+            <span class="flag">
+              🇸🇬
+            </span>
+
+            <span class="server-main">
+
+              <b>
+                Сингапур
+              </b>
+
+              <small>
+                Оптимально для Азии
+              </small>
+
+            </span>
+
+            <span class="tag global">
+              GLOBAL
+            </span>
+
+            <span class="signal">
+              ▂▅▇
+            </span>
+
+          </button>
+
+
+          <button
+            class="server-card"
+            onclick="connectServer('us')"
+          >
+
+            <span class="flag">
+              🇺🇸
+            </span>
+
+            <span class="server-main">
+
+              <b>
+                США
+              </b>
+
+              <small>
+                Доступ к зарубежным сервисам
+              </small>
+
+            </span>
+
+            <span class="tag services">
+              SERVICES
+            </span>
+
+            <span class="signal">
+              ▂▅▇
+            </span>
+
+          </button>
 
         </div>
 
 
         <div class="info-note">
 
-          Нажатие «Подключиться» откроет выбранный
-          VPN-клиент. Ссылки Happ/INCY подключаются
-          на этапе настройки сервера.
+          Нажатие «Подключиться» откроет выбранный VPN-клиент.
+          Ссылки Happ/INCY подключаются на этапе настройки сервера.
 
         </div>
 
       </section>
 
 
-      <!-- ========================= -->
       <!-- SERVICES -->
-      <!-- ========================= -->
 
       <section id="services" class="page">
 
@@ -438,9 +594,7 @@
       </section>
 
 
-      <!-- ========================= -->
       <!-- PAYMENTS -->
-      <!-- ========================= -->
 
       <section id="payments" class="page">
 
@@ -535,9 +689,7 @@
       </section>
 
 
-      <!-- ========================= -->
       <!-- ESIM -->
-      <!-- ========================= -->
 
       <section id="esim" class="page">
 
@@ -583,7 +735,9 @@
 
           <button class="country-card">
 
-            <span>🇹🇷</span>
+            <span>
+              🇹🇷
+            </span>
 
             <b>
               Турция
@@ -598,7 +752,9 @@
 
           <button class="country-card">
 
-            <span>🇦🇪</span>
+            <span>
+              🇦🇪
+            </span>
 
             <b>
               ОАЭ
@@ -613,7 +769,9 @@
 
           <button class="country-card">
 
-            <span>🇹🇭</span>
+            <span>
+              🇹🇭
+            </span>
 
             <b>
               Таиланд
@@ -628,7 +786,9 @@
 
           <button class="country-card">
 
-            <span>🌍</span>
+            <span>
+              🌍
+            </span>
 
             <b>
               Другие страны
@@ -645,9 +805,7 @@
       </section>
 
 
-      <!-- ========================= -->
       <!-- PROFILE -->
-      <!-- ========================= -->
 
       <section id="profile" class="page">
 
@@ -730,9 +888,7 @@
     </main>
 
 
-    <!-- ========================= -->
-    <!-- BOTTOM NAVIGATION -->
-    <!-- ========================= -->
+    <!-- BOTTOM NAV -->
 
     <nav class="bottom-nav">
 
@@ -742,7 +898,9 @@
         onclick="openSection('home')"
       >
         <span>⌂</span>
-        <small>Главная</small>
+        <small>
+          Главная
+        </small>
       </button>
 
 
@@ -752,7 +910,9 @@
         onclick="openSection('servers')"
       >
         <span>◈</span>
-        <small>VPN</small>
+        <small>
+          VPN
+        </small>
       </button>
 
 
@@ -761,7 +921,9 @@
         data-page="services"
         onclick="openSection('services')"
       >
-        <span>TIa</span>
+        <span>
+          TIa
+        </span>
       </button>
 
 
@@ -771,7 +933,9 @@
         onclick="openSection('esim')"
       >
         <span>▤</span>
-        <small>Travel</small>
+        <small>
+          Travel
+        </small>
       </button>
 
 
@@ -781,7 +945,9 @@
         onclick="openSection('profile')"
       >
         <span>○</span>
-        <small>Профиль</small>
+        <small>
+          Профиль
+        </small>
       </button>
 
     </nav>
@@ -789,395 +955,10 @@
   </div>
 
 
-  <!-- TOAST -->
-
   <div id="toast" class="toast"></div>
 
 
-  <!-- APP JS -->
-
   <script src="app.js"></script>
-
-
-  <!-- ========================= -->
-  <!-- NEON / BACKEND CONNECTION -->
-  <!-- ========================= -->
-
-  <script>
-
-    const TIA_BACKEND =
-      "https://tia-backend-gx6p.onrender.com";
-
-
-    /*
-      Флаги стран.
-      Neon хранит country_code,
-      а Mini App отображает соответствующий флаг.
-    */
-
-    const countryFlags = {
-
-      NL: "🇳🇱",
-      FI: "🇫🇮",
-      DE: "🇩🇪",
-      SG: "🇸🇬",
-      US: "🇺🇸",
-
-      RU: "🇷🇺",
-      KZ: "🇰🇿",
-      KG: "🇰🇬",
-      UZ: "🇺🇿",
-      TR: "🇹🇷",
-      AE: "🇦🇪",
-      TH: "🇹🇭"
-
-    };
-
-
-    /*
-      Классы для визуальных тегов.
-    */
-
-    function getTagClass(tag) {
-
-      const value =
-        String(tag || "")
-          .toLowerCase();
-
-      if (value === "speed") {
-        return "speed";
-      }
-
-      if (value === "privacy") {
-        return "privacy";
-      }
-
-      if (value === "stable") {
-        return "stable";
-      }
-
-      if (value === "global") {
-        return "global";
-      }
-
-      if (value === "services") {
-        return "services";
-      }
-
-      return "speed";
-    }
-
-
-    /*
-      Создаём карточку сервера.
-    */
-
-    function createServerCard(server) {
-
-      const flag =
-        countryFlags[server.country_code] || "🌍";
-
-
-      const tagClass =
-        getTagClass(server.purpose_tag);
-
-
-      const serverId =
-        String(server.country_code || "")
-          .toLowerCase();
-
-
-      const card =
-        document.createElement("button");
-
-
-      card.className =
-        "server-card";
-
-
-      card.setAttribute(
-        "type",
-        "button"
-      );
-
-
-      card.onclick =
-        function () {
-
-          if (typeof connectServer === "function") {
-
-            connectServer(serverId);
-
-          } else {
-
-            const message =
-              `Выбран сервер: ${server.country_name}`;
-
-            if (typeof toast === "function") {
-
-              toast(message);
-
-            }
-
-          }
-
-        };
-
-
-      card.innerHTML = `
-
-        <span class="flag">
-          ${flag}
-        </span>
-
-        <span class="server-main">
-
-          <b>
-            ${escapeHtml(server.country_name)}
-          </b>
-
-          <small>
-            ${escapeHtml(server.description || "VPN-сервер")}
-          </small>
-
-        </span>
-
-        <span class="tag ${tagClass}">
-          ${escapeHtml(server.purpose_tag || "VPN")}
-        </span>
-
-        <span class="signal">
-          ▂▅▇
-        </span>
-
-      `;
-
-
-      return card;
-
-    }
-
-
-    /*
-      Защита текста перед вставкой в HTML.
-    */
-
-    function escapeHtml(value) {
-
-      return String(value ?? "")
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
-
-    }
-
-
-    /*
-      Загружаем серверы из Neon
-      через Render Backend.
-    */
-
-    async function loadServersFromBackend() {
-
-      const container =
-        document.getElementById(
-          "vpn-server-list"
-        );
-
-
-      if (!container) {
-        return;
-      }
-
-
-      try {
-
-        const response =
-          await fetch(
-            `${TIA_BACKEND}/api/vpn/servers`
-          );
-
-
-        if (!response.ok) {
-
-          throw new Error(
-            `HTTP ${response.status}`
-          );
-
-        }
-
-
-        const data =
-          await response.json();
-
-
-        if (
-          !data ||
-          !data.ok ||
-          !Array.isArray(data.servers)
-        ) {
-
-          throw new Error(
-            "Неверный ответ сервера"
-          );
-
-        }
-
-
-        container.innerHTML = "";
-
-
-        if (data.servers.length === 0) {
-
-          container.innerHTML = `
-
-            <div class="info-note">
-              Сейчас нет доступных VPN-серверов.
-            </div>
-
-          `;
-
-          return;
-
-        }
-
-
-        data.servers.forEach(
-          function (server) {
-
-            const card =
-              createServerCard(server);
-
-            container.appendChild(card);
-
-          }
-        );
-
-
-        /*
-          Первый сервер используется
-          как рекомендуемый на главной.
-        */
-
-        const recommended =
-          data.servers[0];
-
-
-        if (recommended) {
-
-          const flag =
-            countryFlags[
-              recommended.country_code
-            ] || "🌍";
-
-
-          const recommendedName =
-            document.getElementById(
-              "recommended-server"
-            );
-
-
-          const recommendedNote =
-            document.getElementById(
-              "recommended-server-note"
-            );
-
-
-          const recommendedButton =
-            document.getElementById(
-              "recommended-connect"
-            );
-
-
-          if (recommendedName) {
-
-            recommendedName.textContent =
-              `${flag} ${recommended.country_name}`;
-
-          }
-
-
-          if (recommendedNote) {
-
-            recommendedNote.textContent =
-              recommended.description ||
-              "Готов к подключению";
-
-          }
-
-
-          if (recommendedButton) {
-
-            recommendedButton.onclick =
-              function () {
-
-                const serverId =
-                  String(
-                    recommended.country_code || ""
-                  ).toLowerCase();
-
-
-                if (
-                  typeof connectServer === "function"
-                ) {
-
-                  connectServer(serverId);
-
-                }
-
-              };
-
-          }
-
-        }
-
-
-        console.log(
-          "TIa Connect: серверы загружены из Neon",
-          data.servers
-        );
-
-
-      } catch (error) {
-
-        console.error(
-          "TIa Connect: ошибка загрузки серверов",
-          error
-        );
-
-
-        container.innerHTML = `
-
-          <div class="info-note">
-
-            Не удалось загрузить список серверов.
-            Попробуйте открыть приложение ещё раз.
-
-          </div>
-
-        `;
-
-      }
-
-    }
-
-
-    /*
-      Запускаем загрузку после открытия страницы.
-    */
-
-    document.addEventListener(
-      "DOMContentLoaded",
-      function () {
-
-        loadServersFromBackend();
-
-      }
-    );
-
-  </script>
 
 </body>
 </html>
